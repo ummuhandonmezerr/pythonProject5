@@ -4,6 +4,7 @@ from pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
+    """Class is that including  functions about login page"""
 
     EMAIL_TEXT = "ummuhandnmzr@gmail.com"
     PASSWORD_TEXT = "123456"
@@ -13,6 +14,8 @@ class LoginPage(BasePage):
     SIGN_IN_SUBMIT = (By.ID, 'signInSubmit')
 
     def sign_in(self):
+        """Fill and click login information"""
+
         self.fill(self.EMAIL_TEXT, *self.EMAIL)
         self.click(*self.EMAIL_SUBMIT)
         self.fill(self.PASSWORD_TEXT, *self.PASSWORD)

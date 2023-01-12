@@ -9,6 +9,8 @@ from pages.home_page import HomePage
 
 
 class BaseTest(unittest.TestCase):
+    """Basic test cases"""
+
     base_url = "http://www.amazon.com/"
 
     def setUp(self):
