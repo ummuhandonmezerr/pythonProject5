@@ -8,6 +8,17 @@ from tests.base_test import BaseTest
 
 
 class TestCheckAmazon(BaseTest):
+    """Test case is :
+    1. Go to http://www.amazon.com and confirm with assertion that the homepage is opened.
+    2. Open the Login screen and login with a user (if you have a previous membership to the site, it can be.)
+    3. Type 'samsung' in the Search field at the top of the screen and click the search button.
+    4. On the next page, it will be confirmed that there is a result for Samsung.
+    5. Clicking on the 2nd page of the search results will confirm that the 2nd page is currently displayed on the opened page.
+    6. Click the 'Add to List' button in the 3rd product from the top.
+    7. By clicking on the 'List' link at the top of the screen, the Wish list will be selected.
+    8. On the page that opens, it will be confirmed that the product that has been tracked on the previous page is found.
+    9. By clicking the 'Delete' button next to this favorite product, it will be removed from my favourites.
+    10. On page , it will be confirmed that this product is no longer favorites."""
 
     def test(self):
         base_page = BasePage(self.driver)
