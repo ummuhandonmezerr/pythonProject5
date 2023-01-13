@@ -51,5 +51,6 @@ class TestCheckAmazon(BaseTest):
         """Confirm that the product has been deleted from the wishlist."""
         wish_list_page.is_the_wish_list_empty()
 
+
     def tearDown(self):
         self.driver.close()
