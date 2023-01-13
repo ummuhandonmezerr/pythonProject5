@@ -28,27 +28,27 @@ class TestCheckAmazon(BaseTest):
         product_page = ProductPage(self.driver)
         wish_list_page = WishListPage(self.driver)
 
-        """Go to Home Page and confirm"""
+        self.logger.info("1. Go to http://www.amazon.com and confirm with assertion that the homepage is opened. ")
         assert self.home_page_locators.BASE_URL == base_page.get_url()
-        """Login"""
+        self.logger.info("step 1 done ")
         home_page.click_sign_in_button()
-        """The user is logged in."""
+        self.logger.info("2.sign in button a click on homepage  ")
         login_page.sign_in()
-        """Write samsung into Search Box and search."""
+        self.logger.info("3. Open the Login screen and login with a user ,if you have a previous membership to the site, it can be. ")
         home_page.search_keyword()
-        """Confirm that Samsung products have arrived."""
+        self.logger.info("4. Type 'samsung' in the Search field at the top of the screen and click the search button.  ")
         search_page.keyword_control()
-        """It goes to page 2 in the search list and confirms that it is on page 2."""
+        self.logger.info("5. It goes to page 2 in the search list and confirms that it is on page 2.")
         search_page.go_to_second_page()
-        """Click the Add To List button in the 3rd product on page 2."""
+        self.logger.info("6. Click the 'Add to List' button in the 3rd product from the top.")
         search_page.choose_the_third_product()
-        """ View wishlist."""
+        self.logger.info("7. By clicking on the 'List' link at the top of the screen, the Wish list will be selected.")
         product_page.add_to_wish_list()
-        """Confirm if the item is correct in the wishlist."""
+        self.logger.info("8. On the page that opens, it will be confirmed that the product that has been tracked on the previous page is found.")
         search_page.check_product_in_wish_list()
-        """Delete product from Wish List."""
+        self.logger.info("9. By clicking the 'Delete' button next to this favorite product, it will be removed from my favourites.")
         wish_list_page.remove_product_in_wish_list()
-        """Confirm that the product has been deleted from the wishlist."""
+        self.logger.info("10. On page , it will be confirmed that this product is no longer favorites.")
         wish_list_page.is_the_wish_list_empty()
 
 
